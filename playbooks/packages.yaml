@@ -6,10 +6,10 @@
     - name: Update and Install Packages
       block:
       when: ansible_pkg_mgr == "yum"
-      - name: Update Packages
-        yum:
-          name: '*'
-          state: latest
-      - name: Install Packages
-        yum:
-          name: ["git", "tree", "curl", "wget"]
+        - name: Update Packages
+          yum:
+            name: '*'
+            state: latest
+        - name: Install Packages
+          yum:
+            name: ["git", "tree", "curl", "wget"]
