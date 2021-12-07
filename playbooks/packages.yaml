@@ -5,7 +5,6 @@
   tasks:
     - name: Update and Install Packages
       block:
-      when: ansible_pkg_mgr == "yum"
         - name: Update Packages
           yum:
             name: '*'
@@ -13,3 +12,4 @@
         - name: Install Packages
           yum:
             name: ["git", "tree", "curl", "wget"]
+      when: ansible_pkg_mgr == "yum"
